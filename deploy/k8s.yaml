@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: modern-toolbox-java
+  labels:
+    app: modern-toolbox-java
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: modern-toolbox-java
+  template:
+    metadata:
+      labels:
+        app: modern-toolbox-java
+    spec:
+      containers:
+        - name: modern-toolbox-java
+          image: modern-toolbox-java:dontcare
+          ports:
+            - containerPort: 8080
